@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
     [SerializeField] private float speed = 5.0f;
+    private float xBound = 3.5f;
+    private float yBound = 4.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +22,12 @@ public class PlayerController : MonoBehaviour
     {
         //Call move player method
         movePlayer();
+
+        //Constrain Players position
+        constrainPlayerPosition();
     }
 
+    //Player movement
     void movePlayer()
     {
         //Player Input
@@ -34,4 +40,35 @@ public class PlayerController : MonoBehaviour
         //Move player left or right 
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
     }
+
+    //Player Bounderies
+    void constrainPlayerPosition()
+    {
+        //Left bound for player
+        if(transform.position.x < -xBound)
+        {
+            transform.position = new Vector3(-xBound, transform.position.y, transform.position.z);
+        }
+
+        //Right bound for player
+        if (transform.position.x > xBound)
+        {
+            transform.position = new Vector3(xBound, transform.position.y, transform.position.z);
+        }
+
+        //Upper bound for player
+        if (transform.position.y > yBound)
+        {
+            transform.position = new Vector3(transform.position.x, yBound, transform.position.z);
+        }
+
+        //Lower bound for player
+        if (transform.position.y < 1)
+        {
+            transform.position = new Vector3(transform.position.x, 1, transform.position.z);
+        }
+
+
+    }
+
 }
