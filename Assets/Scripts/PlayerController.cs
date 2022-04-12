@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private float xBound = 3.5f;
     private float yBound = 4.5f;
 
+    public GameObject projectilePrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,12 @@ public class PlayerController : MonoBehaviour
 
         //Constrain Players position
         constrainPlayerPosition();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // Launch projectile from the player 
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
     }
 
     //Player movement
