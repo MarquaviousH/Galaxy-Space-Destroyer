@@ -12,11 +12,12 @@ public class PlayerController : MonoBehaviour
     private float yBound = 4.5f;
 
     public GameObject projectilePrefab;
+   
 
     // Start is called before the first frame update
     void Start()
     {
-
+      
     }
 
     // Update is called once per frame
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
             // Launch projectile from the player 
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
+
     }
 
     //Player movement
@@ -78,5 +80,4 @@ public class PlayerController : MonoBehaviour
 
 
     }
-
 }

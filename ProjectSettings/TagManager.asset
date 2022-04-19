@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - player
+  - power up
+  - enemy ship
+  - asteroid
   layers:
   - Default
   - TransparentFX
