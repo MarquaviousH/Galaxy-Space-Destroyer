@@ -2,39 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectCollision : MonoBehaviour
+public class ScoreTrigger : MonoBehaviour
 {
-    private PlayerController playerObject;
+
     private GameManager gameManager;
-    public bool isHit;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-
-    // When object collides with other, destroy both
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("player"))
+        if (other.gameObject.CompareTag("asteroid"))
         {
-
-            Destroy(gameObject);
-            Destroy(other.gameObject);
+            gameManager.UpdateScore(20);
 
         }
-        else
+        else if (other.gameObject.CompareTag("enemy ship"))
         {
-            Destroy(gameObject);
-            isHit = true;
+            gameManager.UpdateScore(50);
         }
+        
     }
 }

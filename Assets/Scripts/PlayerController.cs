@@ -12,12 +12,17 @@ public class PlayerController : MonoBehaviour
     private float yBound = 4.5f;
 
     public GameObject projectilePrefab;
-   
+    public MeshRenderer meshRenderer;
+    public Color originalColor;
+    private float flashTime = 1.0f;
+    private DetectCollision playerHit;
 
     // Start is called before the first frame update
     void Start()
     {
-      
+        meshRenderer = GetComponent<MeshRenderer>();
+        originalColor = meshRenderer.material.color;
+        StartCoroutine(flash());
     }
 
     // Update is called once per frame
@@ -55,7 +60,7 @@ public class PlayerController : MonoBehaviour
     void constrainPlayerPosition()
     {
         //Left bound for player
-        if(transform.position.x < -xBound)
+        if (transform.position.x < -xBound)
         {
             transform.position = new Vector3(-xBound, transform.position.y, transform.position.z);
         }
@@ -77,7 +82,18 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, 1, transform.position.z);
         }
-
-
     }
+
+    IEnumerator flash()
+    {
+        while (playerHit.isHit == true)
+        {
+            meshRenderer.material.color = Color.white;
+            yield return new WaitForSeconds(flashTime);
+            meshRenderer.material.color = originalColor;
+            playerHit.isHit = false;
+        }
+    }
+
 }
+

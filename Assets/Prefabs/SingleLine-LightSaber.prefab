@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6161474877547430215}
   - component: {fileID: 3233595042976781055}
   - component: {fileID: 1456354567902383046}
+  - component: {fileID: 9028197057848151141}
   m_Layer: 0
   m_Name: SingleLine-LightSaber
   m_TagString: Untagged
@@ -143,3 +144,15 @@ CapsuleCollider:
   m_Height: 203.38148
   m_Direction: 1
   m_Center: {x: 0.09242952, y: 51.42783, z: 0.15488683}
+--- !u!114 &9028197057848151141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6161474878862711395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f2a685f394aa54c87d52d3c101c1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
