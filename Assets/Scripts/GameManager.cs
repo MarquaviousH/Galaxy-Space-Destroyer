@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnPowerUps());
 
         score = 0;
-        UpdateScore(10);
+        UpdateScore(0);
     }
 
     // Update is called once per frame

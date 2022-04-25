@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestoryOutOfBounds : MonoBehaviour
 {
     // Declare Variables
-    private float frontBound = 27.0f;
+    private float frontBound = 30.0f;
     private float backBound = -15.0f;
 
     // Start is called before the first frame update

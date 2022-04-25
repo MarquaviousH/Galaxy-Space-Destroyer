@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private float verticalInput;
     [SerializeField] private float speed = 5.0f;
     private float xBound = 3.5f;
-    private float yBound = 4.5f;
+    private float yBound = 5.5f;
 
     public GameObject projectilePrefab;
     public MeshRenderer meshRenderer;
