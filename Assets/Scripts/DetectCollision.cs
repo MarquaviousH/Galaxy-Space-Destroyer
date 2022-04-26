@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-    private PlayerController playerObject;
-    private GameManager gameManager;
-    public bool isHit;
 
     // Start is called before the first frame update
     void Start()

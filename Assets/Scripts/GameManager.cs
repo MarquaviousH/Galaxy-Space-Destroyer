@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
     private float zSpawnRange = 21.41f;
     private float spawnRate = 4.0f;
     private int score;
+    public int lifeCount;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI lifeCounterText;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +23,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnPowerUps());
 
         score = 0;
-        UpdateScore(0);
+        UpdateScore(score);
+
+        lifeCount = 3;
+        UpdateExtraLifeCounter(lifeCount);
+
     }
 
     // Update is called once per frame
@@ -54,7 +60,7 @@ public class GameManager : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(spawnRate);
+            yield return new WaitForSeconds(spawnRate + 15);
 
             // Generate random x and y positions for spawn locations
             float randomX = Random.Range(-xSpawnRange, xSpawnRange);
@@ -75,5 +81,11 @@ public class GameManager : MonoBehaviour
     {
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
+    }
+
+    public void UpdateExtraLifeCounter(int newLifeCount)
+    {
+        lifeCount = newLifeCount;
+        lifeCounterText.text = "Extra Lives: " + lifeCount;
     }
 }

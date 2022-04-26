@@ -8,21 +8,15 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
     [SerializeField] private float speed = 5.0f;
-    private float xBound = 3.5f;
+    private float xBound = 5.5f;
     private float yBound = 5.5f;
 
     public GameObject projectilePrefab;
-    public MeshRenderer meshRenderer;
-    public Color originalColor;
-    private float flashTime = 1.0f;
-    private DetectCollision playerHit;
 
     // Start is called before the first frame update
     void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-        originalColor = meshRenderer.material.color;
-        StartCoroutine(flash());
+     
     }
 
     // Update is called once per frame
@@ -81,17 +75,6 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y < 1)
         {
             transform.position = new Vector3(transform.position.x, 1, transform.position.z);
-        }
-    }
-
-    IEnumerator flash()
-    {
-        while (playerHit.isHit == true)
-        {
-            meshRenderer.material.color = Color.white;
-            yield return new WaitForSeconds(flashTime);
-            meshRenderer.material.color = originalColor;
-            playerHit.isHit = false;
         }
     }
 
