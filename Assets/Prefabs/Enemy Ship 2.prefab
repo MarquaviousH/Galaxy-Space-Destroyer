@@ -164,18 +164,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5768211428067876648, guid: 5644f08abc95ca248b1153d16c8d1928, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5768211428067876648, guid: 5644f08abc95ca248b1153d16c8d1928, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5768211428067876648, guid: 5644f08abc95ca248b1153d16c8d1928, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5768211428067876648, guid: 5644f08abc95ca248b1153d16c8d1928, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -219,32 +207,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 4.4
       objectReference: {fileID: 0}
-    - target: {fileID: 6577257765920949650, guid: 5644f08abc95ca248b1153d16c8d1928, type: 3}
-      propertyPath: m_TagString
-      value: enemy ship
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5644f08abc95ca248b1153d16c8d1928, type: 3}
---- !u!1 &6646023325909582792 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6577257765920949650, guid: 5644f08abc95ca248b1153d16c8d1928, type: 3}
-  m_PrefabInstance: {fileID: 539435899355186778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6300742226896836978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5768211428067876648, guid: 5644f08abc95ca248b1153d16c8d1928, type: 3}
   m_PrefabInstance: {fileID: 539435899355186778}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &5595699422949422961
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6646023325909582792}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 19.688616, y: 3.3477428, z: 22.0742}
-  m_Center: {x: 0, y: 1.6738714, z: 5.449951}

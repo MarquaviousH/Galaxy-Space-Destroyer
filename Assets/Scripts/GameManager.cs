@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,8 +14,11 @@ public class GameManager : MonoBehaviour
     private float spawnRate = 4.0f;
     private int score;
     public int lifeCount;
+    private int highScore;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI lifeCounterText;
+    public TextMeshProUGUI highScoreText;
+    public static GameManager Instance;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,9 @@ public class GameManager : MonoBehaviour
 
         lifeCount = 3;
         UpdateExtraLifeCounter(lifeCount);
+
+        UpdateHighScore(highScore);
+
 
     }
 
@@ -81,6 +88,7 @@ public class GameManager : MonoBehaviour
     {
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
+        UpdateHighScore(score);
     }
 
     public void UpdateExtraLifeCounter(int newLifeCount)
@@ -88,4 +96,62 @@ public class GameManager : MonoBehaviour
         lifeCount = newLifeCount;
         lifeCounterText.text = "Extra Lives: " + lifeCount;
     }
+
+    public void UpdateHighScore(int newHighScore)
+    {
+        if(highScore <= newHighScore)
+        {
+            highScore = newHighScore;
+            highScoreText.text = "High Score: " + highScore;
+        }
+    }
+
+    private void Awake()
+    {
+        // start of new code
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        // end of new code
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        LoadHighScore();
+    }
+
+
+    [System.Serializable]
+    class SaveData
+    {
+        public int highscore;
+    }
+
+    public void SaveHighScore()
+    {
+        SaveData data = new SaveData();
+        data.highscore = highScore;
+
+        string json = JsonUtility.ToJson(data);
+
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        Debug.Log("It Was saved");
+    }
+
+    public void LoadHighScore()
+    {
+        Debug.Log("Loading");
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            Debug.Log("It Was loaded");
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            highScore = data.highscore;
+        }
+    }
+
 }

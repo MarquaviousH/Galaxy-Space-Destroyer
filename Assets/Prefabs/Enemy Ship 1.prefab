@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb56838467dbe4448c7c1e39f210a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHit: 0
 --- !u!114 &3213287046251819112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,18 +162,6 @@ PrefabInstance:
     - target: {fileID: 5175856992433891894, guid: d899c8669c7dcf6448ca3076582b8128, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5175856992433891894, guid: d899c8669c7dcf6448ca3076582b8128, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5175856992433891894, guid: d899c8669c7dcf6448ca3076582b8128, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5175856992433891894, guid: d899c8669c7dcf6448ca3076582b8128, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5175856992433891894, guid: d899c8669c7dcf6448ca3076582b8128, type: 3}
       propertyPath: m_LocalPosition.x
@@ -220,36 +207,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 4.2
       objectReference: {fileID: 0}
-    - target: {fileID: 5521279207160557708, guid: d899c8669c7dcf6448ca3076582b8128, type: 3}
-      propertyPath: m_TagString
-      value: enemy ship
-      objectReference: {fileID: 0}
-    - target: {fileID: 6675621504782886488, guid: d899c8669c7dcf6448ca3076582b8128, type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d899c8669c7dcf6448ca3076582b8128, type: 3}
---- !u!1 &1362998869112003249 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5521279207160557708, guid: d899c8669c7dcf6448ca3076582b8128, type: 3}
-  m_PrefabInstance: {fileID: 6806590573854599741}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1846907488819888139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5175856992433891894, guid: d899c8669c7dcf6448ca3076582b8128, type: 3}
   m_PrefabInstance: {fileID: 6806590573854599741}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &365188502883534066
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1362998869112003249}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 19.688616, y: 3.3477428, z: 22.0742}
-  m_Center: {x: 0, y: 1.6738714, z: 5.449951}

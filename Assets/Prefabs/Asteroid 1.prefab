@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb56838467dbe4448c7c1e39f210a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHit: 0
 --- !u!114 &7445624599062625439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +164,6 @@ GameObject:
   - component: {fileID: 7951715303313762847}
   - component: {fileID: 7951715303313762846}
   - component: {fileID: 3461619365650080711}
-  - component: {fileID: 8477708070733938627}
   m_Layer: 0
   m_Name: Rock 9
   m_TagString: asteroid
@@ -249,17 +247,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.7065563, y: 2.2970932, z: 3.4731264}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!64 &8477708070733938627
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7951715303313762835}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 716f745abc96e3649986868a8947ee1b, type: 3}

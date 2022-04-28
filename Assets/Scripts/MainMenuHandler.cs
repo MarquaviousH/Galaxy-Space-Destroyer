@@ -10,20 +10,6 @@ using UnityEditor;
 
 public class MainMenuHandler : MonoBehaviour
 {
-
-    public GameObject mainMenu;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     public void StartNew()
     {
@@ -33,7 +19,7 @@ public class MainMenuHandler : MonoBehaviour
 
     public void Exit()
     {
-
+        GameManager.Instance.SaveHighScore();
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
 #else

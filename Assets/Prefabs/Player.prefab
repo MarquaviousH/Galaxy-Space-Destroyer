@@ -112,8 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   projectilePrefab: {fileID: 6161474878862711395, guid: 3292c56cb59256d49a5d6a65a07c2ab0, type: 3}
-  meshRenderer: {fileID: 0}
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!54 &6790694579753514865
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -140,18 +138,6 @@ PrefabInstance:
     - target: {fileID: 570632013832535785, guid: c484e9ee88e6f4942ad5c8a0461c6493, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 570632013832535785, guid: c484e9ee88e6f4942ad5c8a0461c6493, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 570632013832535785, guid: c484e9ee88e6f4942ad5c8a0461c6493, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 570632013832535785, guid: c484e9ee88e6f4942ad5c8a0461c6493, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 570632013832535785, guid: c484e9ee88e6f4942ad5c8a0461c6493, type: 3}
       propertyPath: m_LocalPosition.x
@@ -197,32 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1.1
       objectReference: {fileID: 0}
-    - target: {fileID: 909896894237664339, guid: c484e9ee88e6f4942ad5c8a0461c6493, type: 3}
-      propertyPath: m_TagString
-      value: player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c484e9ee88e6f4942ad5c8a0461c6493, type: 3}
---- !u!1 &4819059300446067907 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 909896894237664339, guid: c484e9ee88e6f4942ad5c8a0461c6493, type: 3}
-  m_PrefabInstance: {fileID: 5638549069797603472}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5308455651407627897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 570632013832535785, guid: c484e9ee88e6f4942ad5c8a0461c6493, type: 3}
   m_PrefabInstance: {fileID: 5638549069797603472}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &9004223151444984571
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4819059300446067907}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 29.447033, y: 4.2635913, z: 22.302198}
-  m_Center: {x: 0, y: 2.1317956, z: 2.8099654}
