@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        transform.Rotate(10.0f * Time.deltaTime, 0.0f, 0.0f);
     }
 
     IEnumerator SpawnEnemies()
@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 
             // Set the random spawn position 
             Vector3 spawnPos = new Vector3(randomX, randomY, zSpawnRange);
+
 
             Instantiate(enemies[randomIndex], spawnPos, enemies[randomIndex].gameObject.transform.rotation);
         }
