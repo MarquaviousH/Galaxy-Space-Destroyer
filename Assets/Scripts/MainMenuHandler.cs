@@ -10,18 +10,20 @@ using UnityEditor;
 
 public class MainMenuHandler : MonoBehaviour
 {
-    
+    //Load the main game scene
     public void StartNew()
     {
         SceneManager.LoadScene(1);
 
     }
 
+    //Load the main menu scene
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
     }
 
+    //Exit out of play mode or application
     public void Exit()
     {
         GameManager.Instance.SaveHighScore();

@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class LifeCounter : MonoBehaviour
 {
-
+    //Declare Variables
     private GameManager gameManager;
     private int lifeCount = 3;
-    private ReturnToMenu returnToMenu;
+    private ActiviateReturnButton returnToMenu;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        returnToMenu = GameObject.Find("GameObject").GetComponent<ReturnToMenu>();
+        returnToMenu = GameObject.Find("GameObject").GetComponent<ActiviateReturnButton>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //When player gets hit, decrease extra life count. If player gets hit after zero, destroy the player.
     private void OnTriggerEnter(Collider other)
     {
         if(lifeCount != 0)

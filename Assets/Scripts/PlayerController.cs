@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 5.0f;
     private float xBound = 5.5f;
     private float yBound = 5.5f;
-
+    private float time = 1.3f;
     public GameObject projectilePrefab;
 
     // Update is called once per frame
@@ -22,10 +22,17 @@ public class PlayerController : MonoBehaviour
         //Constrain Players position
         constrainPlayerPosition();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        //Decrease the time to stop the player from spaming lasers
+        time -= Time.deltaTime;
+
+        if (time <= 0)
         {
-            // Launch projectile from the player 
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // Launch projectile from the player 
+                Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+                time = 1.3f;
+            }
         }
 
     }

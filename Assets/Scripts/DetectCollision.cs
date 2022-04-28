@@ -4,20 +4,6 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
     // When object collides with other, destroy both
     private void OnTriggerEnter(Collider other)
     {

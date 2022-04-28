@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ScoreTrigger : MonoBehaviour
 {
-
+    //Declare variables
     private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Get the components of the gameManager
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
+    //When laser collides with the asteroid or enemy ship, update the score
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("asteroid"))
@@ -24,6 +26,6 @@ public class ScoreTrigger : MonoBehaviour
         {
             gameManager.UpdateScore(50);
         }
-        
+
     }
 }

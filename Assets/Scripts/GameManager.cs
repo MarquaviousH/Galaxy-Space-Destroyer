@@ -6,12 +6,13 @@ using System.IO;
 
 public class GameManager : MonoBehaviour
 {
+    //Declare Variables
     public List<GameObject> enemies;
     public List<GameObject> powerUp;
     private float xSpawnRange = 3.5f;
     private float ySpawnRange = 4.5f;
     private float zSpawnRange = 21.41f;
-    private float spawnRate = 4.0f;
+    private float spawnRate = 2.5f;
     private int score;
     public int lifeCount;
     private int highScore;
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnEnemies());
-        StartCoroutine(SpawnPowerUps());
+        //StartCoroutine(SpawnPowerUps()); Was going to implement this with features but has been cut out due to time
 
         score = 0;
         UpdateScore(score);
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(10.0f * Time.deltaTime, 0.0f, 0.0f);
+        
     }
 
     IEnumerator SpawnEnemies()
@@ -85,21 +86,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Update the score as the player is playing 
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
+
+        //Update the high score as the player is playing
         UpdateHighScore(score);
     }
 
+    //Update the extra life as the player is playing
     public void UpdateExtraLifeCounter(int newLifeCount)
     {
         lifeCount = newLifeCount;
         lifeCounterText.text = "Extra Lives: " + lifeCount;
     }
 
+    //Update the high score as the player is playing
     public void UpdateHighScore(int newHighScore)
     {
+
+        //If the current high score is lower than the new one, set the new one as the high score
         if(highScore <= newHighScore)
         {
             highScore = newHighScore;
@@ -107,6 +115,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //When this load, dont destory the instance of this class
     private void Awake()
     {
         // start of new code
@@ -123,13 +132,14 @@ public class GameManager : MonoBehaviour
         LoadHighScore();
     }
 
-
+    //Create a sava data class to save the high score
     [System.Serializable]
     class SaveData
     {
         public int highscore;
     }
 
+    //Save the highest score to a json file
     public void SaveHighScore()
     {
         SaveData data = new SaveData();
@@ -138,16 +148,14 @@ public class GameManager : MonoBehaviour
         string json = JsonUtility.ToJson(data);
 
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
-        Debug.Log("It Was saved");
     }
 
+    //Load the high score from the json file
     public void LoadHighScore()
     {
-        Debug.Log("Loading");
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
         {
-            Debug.Log("It Was loaded");
             string json = File.ReadAllText(path);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
 

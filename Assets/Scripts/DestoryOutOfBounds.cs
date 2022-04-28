@@ -8,12 +8,6 @@ public class DestoryOutOfBounds : MonoBehaviour
     private float frontBound = 30.0f;
     private float backBound = -15.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
