@@ -12,6 +12,14 @@ public class PlayerController : MonoBehaviour
     private float yBound = 5.5f;
     private float time = 1.3f;
     public GameObject projectilePrefab;
+    public AudioClip blasterSound;
+    private AudioSource blasterAudio;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        blasterAudio = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,6 +40,8 @@ public class PlayerController : MonoBehaviour
                 // Launch projectile from the player 
                 Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
                 time = 1.3f;
+                blasterAudio.PlayOneShot(blasterSound, 1.0f);
+
             }
         }
 
