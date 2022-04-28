@@ -17,6 +17,11 @@ public class MainMenuHandler : MonoBehaviour
 
     }
 
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void Exit()
     {
         GameManager.Instance.SaveHighScore();

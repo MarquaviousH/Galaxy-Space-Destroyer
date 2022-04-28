@@ -7,12 +7,13 @@ public class LifeCounter : MonoBehaviour
 
     private GameManager gameManager;
     private int lifeCount = 3;
-    //public GameObject restartButton;
+    private ReturnToMenu returnToMenu;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        returnToMenu = GameObject.Find("GameObject").GetComponent<ReturnToMenu>();
     }
 
     // Update is called once per frame
@@ -36,6 +37,7 @@ public class LifeCounter : MonoBehaviour
             Destroy(gameObject);
             Destroy(other.gameObject);
             gameManager.SaveHighScore();
+            returnToMenu.SetButtonActive();
         }
     }
 }
