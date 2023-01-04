@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
                 // Launch projectile from the player 
                 Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
                 time = 1.3f;
+                
+                //Play the blaster sound
                 blasterAudio.PlayOneShot(blasterSound, 1.0f);
 
             }
